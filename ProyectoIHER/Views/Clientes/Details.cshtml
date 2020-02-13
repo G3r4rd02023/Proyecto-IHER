@@ -1,0 +1,74 @@
+﻿@model ProyectoIHER.Models.Cliente
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Cliente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nacionalidad.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nacionalidad.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClienteRTN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClienteRTN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClienteNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClienteNombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClienteApellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClienteApellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Correo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Correo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ClienteID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

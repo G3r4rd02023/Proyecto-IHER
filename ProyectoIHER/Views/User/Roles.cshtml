@@ -1,0 +1,30 @@
+﻿
+@model ProyectoIHER.ModelViews.UserView
+
+@{
+    ViewBag.Title = "Roles";
+}
+
+<h2>Roles for User : @Model.Name</h2>
+
+<p>
+    @Html.ActionLink("Add Role", "AddRole", new { userID = Model.UserID }, new { @class = "btn btn-info" })
+    @Html.ActionLink("Back to List", "Index", new { user = Model }, new { @class = "btn btn-primary" })
+</p>
+
+<table class="table">
+
+    @for (int i = 0; i < Model.Roles.Count; i++)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => Model.Roles[i].Name)
+            </td>
+
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { userID = Model.UserID, roleID = Model.Roles[i].RoleId })
+            </td>
+        </tr>
+    }
+
+</table>
