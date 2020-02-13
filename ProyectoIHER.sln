@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoIHER", "ProyectoIHE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoIHER.Tests", "ProyectoIHER.Tests\ProyectoIHER.Tests.csproj", "{235F68BE-1087-4B00-B6F7-E10D9601D847}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateIHER", "..\TemplateIHER\TemplateIHER\TemplateIHER.csproj", "{7F88E760-CFA0-4D95-ACD2-3CB76C9E4AE2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,11 +23,15 @@ Global
 		{235F68BE-1087-4B00-B6F7-E10D9601D847}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{235F68BE-1087-4B00-B6F7-E10D9601D847}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{235F68BE-1087-4B00-B6F7-E10D9601D847}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F88E760-CFA0-4D95-ACD2-3CB76C9E4AE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F88E760-CFA0-4D95-ACD2-3CB76C9E4AE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F88E760-CFA0-4D95-ACD2-3CB76C9E4AE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F88E760-CFA0-4D95-ACD2-3CB76C9E4AE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {55A3BBD6-B729-4E5E-A29C-7794B2EC0A96}
+		SolutionGuid = {1A6FA921-F936-47F9-9761-005D78C4465D}
 	EndGlobalSection
 EndGlobal
