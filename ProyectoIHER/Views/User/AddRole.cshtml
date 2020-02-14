@@ -6,7 +6,7 @@
                 ViewBag.Title = "AddRole";
 }
 
-<h2>AddRole To User: @Model.Name </h2>
+<h2>Agregar Rol al Usuario: @Model.Name </h2>
 <h3>@ViewBag.Error</h3>
 
 @using (Html.BeginForm("AddRole", "User", new { userID = Model.UserID }, FormMethod.Post))
@@ -17,15 +17,15 @@
 
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Role.RoleId, "RoleID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Role.RoleId, "Rol", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("RoleID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Role.RoleId, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        @Html.ActionLink("Return to User", "Roles", new { userID = Model.UserID }, new { @class = "btn btn-info" })
-        <input type="submit" value="Add Role" class="btn btn-success" />
+        @Html.ActionLink("Cancelar", "Roles", new { userID = Model.UserID }, new { @class = "btn btn-info" })
+        <input type="submit" value="Guardar" class="btn btn-success" />
 
 
     </div>

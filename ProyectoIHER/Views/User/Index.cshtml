@@ -4,15 +4,15 @@
     ViewBag.Title = "Index";
 }
 
-<h2>PermissionsManager</h2>
+<h2>Permisos</h2>
 
-<table class="table">
+<table class="table table-striped">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            Usuario
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Email)
+            Email
         </th>
         <th></th>
     </tr>
@@ -28,7 +28,7 @@
             </td>
 
             <td>
-                @Html.ActionLink("Roles", "Roles", new { userID = item.UserID }) |
+                @Html.ActionLink("Roles", "Roles", new { userID = item.UserID }) 
             </td>
         </tr>
     }

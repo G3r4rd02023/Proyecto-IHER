@@ -95,7 +95,7 @@ namespace ProyectoIHER.Controllers
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(db));
 
             var list = roleManager.Roles.ToList();
-            list.Add(new IdentityRole { Id = "", Name = "[Select a role...]" });
+            list.Add(new IdentityRole { Id = "", Name = "[Seleccionar un Rol...]" });
             list = list.OrderBy(r => r.Name).ToList();
             ViewBag.RoleID = new SelectList(list, "Id", "Name");
 

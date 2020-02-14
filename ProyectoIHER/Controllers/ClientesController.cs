@@ -16,7 +16,7 @@ namespace ProyectoIHER.Controllers
         private ProyectoIHERContext db = new ProyectoIHERContext();
 
         // GET: Clientes
-        [Authorize (Roles = "View")]
+        [Authorize (Roles = "Ver")]
         public ActionResult Index()
         {
             var clientes = db.Clientes.Include(c => c.Nacionalidad);
@@ -24,7 +24,7 @@ namespace ProyectoIHER.Controllers
         }
 
         // GET: Clientes/Details/5
-        [Authorize (Roles = "View")]
+        [Authorize (Roles = "Ver")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -40,7 +40,7 @@ namespace ProyectoIHER.Controllers
         }
 
         // GET: Clientes/Create
-        [Authorize (Roles = "Create")]
+        [Authorize (Roles = "Crear")]
         public ActionResult Create()
         {
             ViewBag.NacionalidadID = new SelectList(db.Nacionalidads, "NacionalidadID", "Descripcion");
@@ -66,7 +66,7 @@ namespace ProyectoIHER.Controllers
         }
 
         // GET: Clientes/Edit/5
-        [Authorize (Roles = "Edit")]
+        [Authorize (Roles = "Editar")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -100,7 +100,7 @@ namespace ProyectoIHER.Controllers
         }
 
         // GET: Clientes/Delete/5
-        [Authorize (Roles = "Delete")]
+        [Authorize (Roles = "Eliminar")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
