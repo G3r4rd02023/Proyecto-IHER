@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
@@ -18,8 +20,27 @@ namespace ProyectoIHER
     {
         public Task SendAsync(IdentityMessage message)
         {
+            //https://www.codeproject.com/Articles/762427/ASP-NET-Identity-Setting-Up-Account-Validation-and
             // Conecte su servicio de correo electrónico aquí para enviar correo electrónico.
-            return Task.FromResult(0);
+            //return Task.FromResult(0);
+            var envia = "helpmetorecoverymypass@gmail.com";
+            var user = "helpmetorecoverymypass@gmail.com";
+            var pass = "Recuperacion123.";
+            NetworkCredential credenciales = new NetworkCredential(user, pass);
+            SmtpClient cliente = new SmtpClient()
+            {
+                Host = "smtp.gmail.com",
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Port = 25,
+                EnableSsl = true,
+                Credentials = credenciales
+            };
+            var mail = new MailMessage(envia, message.Destination);
+            mail.Subject = message.Subject;
+            mail.Body = message.Body;
+            mail.IsBodyHtml = true;
+            return cliente.SendMailAsync(mail);
         }
     }
 
