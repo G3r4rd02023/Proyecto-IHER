@@ -5832,7 +5832,7 @@ button.close {
   position: fixed;
 }
 .backgroundEdificio {
-    background-image: url('../Imagenes/EdificioIHER.jpg');
+    background: url("../Imagenes/EdificioIHER.jpg") no-repeat center center fixed;
     background-size: cover;
     background-size: cover;
     background-size: cover;
