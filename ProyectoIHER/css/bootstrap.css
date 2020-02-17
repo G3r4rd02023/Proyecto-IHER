@@ -5831,3 +5831,11 @@ button.close {
 .affix {
   position: fixed;
 }
+.backgroundEdificio {
+    background-image: url('../Imagenes/EdificioIHER.jpg');
+    background-size: cover;
+    background-size: cover;
+    background-size: cover;
+    background-size: cover;
+    min-height: 450px;
+}
