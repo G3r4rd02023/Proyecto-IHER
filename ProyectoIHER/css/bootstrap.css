@@ -5831,17 +5831,3 @@ button.close {
 .affix {
   position: fixed;
 }
-.backgroundEdificio {
-    background: url("../Imagenes/EdificioIHER.jpg") no-repeat center center fixed;
-    background-size: cover;
-    background-size: cover;
-    background-size: cover;
-    background-size: cover;
-    min-height: 450px;
-}
-.FondoTransparente{
-    background: rgba(255,255,255,0.50)
-    }
-.contenedorCentrado{
-    align-content:center
-}
