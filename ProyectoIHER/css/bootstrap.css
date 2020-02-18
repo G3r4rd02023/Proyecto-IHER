@@ -5841,5 +5841,7 @@ button.close {
 }
 .FondoTransparente{
     background: rgba(255,255,255,0.50)
-
+    }
+.contenedorCentrado{
+    align-content:center
 }
