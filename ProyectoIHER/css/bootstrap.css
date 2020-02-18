@@ -5831,3 +5831,13 @@ button.close {
 .affix {
   position: fixed;
 }
+.FooterMod{
+    background: #22b24c;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align:center;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+}
