@@ -2080,19 +2080,19 @@ fieldset[disabled] .btn-default.active {
   background-color: #ffffff;
 }
 .btn-primary {
-  color: #ffffff;
-  background-color: #eb6864;
-  border-color: #eb6864;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
 }
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active,
-.open .dropdown-toggle.btn-primary {
-  color: #ffffff;
-  background-color: #e64540;
-  border-color: #e4332e;
-}
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active,
+    .btn-primary.active,
+    .open .dropdown-toggle.btn-primary {
+        color: #ffffff;
+        background-color:dodgerblue;
+        border-color: #007bff;
+    }
 .btn-primary:active,
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
@@ -5848,8 +5848,15 @@ button.close {
     background-size: cover;
     }
 .fondotransparenteblanco{
-    background-color: rgba(240, 238, 238, 0.50)
+    background-color: rgba(240, 238, 238, 0.50);
+    max-width:600px;
+    text-align:center;
 }
 .LogoLogin {
+    max-width:230px;
+    margin: 3vh  auto;
     text-align:center;
+}
+.BotonEstirado{
+    width:100%;
 }
