@@ -5832,7 +5832,7 @@ button.close {
   position: fixed;
 }
 .FooterMod {
-    background: rgba(86, 86, 86, 0.50);
+    background: rgba(235,235,235,0.73);
     position:fixed;
     bottom: 0;
     width: 100%;
@@ -5842,4 +5842,14 @@ button.close {
     color:black;
     font-family:Calibri;
     font-size: 14px;
+}
+.FondoEdificio {
+    background: url(../Imagenes/EdificioIHER.jpg) no-repeat center fixed;
+    background-size: cover;
+    }
+.fondotransparenteblanco{
+    background-color: rgba(240, 238, 238, 0.50)
+}
+.LogoLogin {
+    text-align:center;
 }
