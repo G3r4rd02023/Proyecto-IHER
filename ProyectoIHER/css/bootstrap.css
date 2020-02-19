@@ -5851,6 +5851,8 @@ button.close {
     background-color: rgba(240, 238, 238, 0.50);
     max-width:600px;
     text-align:center;
+    border-radius:2px;
+    padding:30px, 30px, 20px;
 }
 .LogoLogin {
     max-width:230px;
