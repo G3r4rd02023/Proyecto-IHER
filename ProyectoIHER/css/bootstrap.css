@@ -528,8 +528,8 @@ a.text-warning:hover {
 .text-danger {
     color: #007bff;
     font-weight:bold;
-    font-family:Calibri;
-    font-size:20px;
+    
+    font-size:14px;
 }
 a.text-danger:hover {
     color: dodgerblue;
@@ -5858,6 +5858,7 @@ button.close {
     border-radius:2px;
     padding:30px, 30px, 20px;
     align-content:center;
+ 
 }
 .LogoLogin {
     max-width:230px;
@@ -5869,7 +5870,7 @@ button.close {
 }
 .ContenidoCentro {
     max-width: 600px;
-    margin: 3vh auto;
+    margin: auto;
     text-align: center;
     position: relative;
     min-height: 1px;

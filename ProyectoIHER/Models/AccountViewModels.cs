@@ -49,16 +49,16 @@ namespace ProyectoIHER.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Correo electrónico")]
+        [Display(Name = "")]
         [EmailAddress]
         public string Email { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Contraseña")]
+        [Display(Name = "")]
         public string Password { get; set; }
 
-        [Display(Name = "¿Recordar cuenta?")]
+        [Display(Name = "¿Recordar?")]
         public bool RememberMe { get; set; }
     }
 
