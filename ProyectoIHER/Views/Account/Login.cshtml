@@ -11,8 +11,8 @@
             <img class="LogoLogin" src="~/Imagenes/logo.png" />
             <p></p>
         </div>
-        <div class="row">
-            <div class="col-md-8 fondotransparenteblanco">
+        <div class="row fondotransparenteblanco ContenidoCentro">
+            
                 <section id="loginForm">
                     @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                     {
@@ -47,7 +47,7 @@
                                 <input type="submit" value="Iniciar sesión" class="btn btn-primary BotonEstirado" />
                             </div>
                         </div>
-                        <p>
+                        <p class="text-danger">
                             @Html.ActionLink("Registrar como nuevo usuario", "Register")
                         </p>
                         //Habilite esta opción después de habilitar la confirmación de la cuenta para la función de restablecimiento de contraseña
@@ -56,7 +56,7 @@
                         </p>
                     }
                 </section>
-            </div>
+            
             
         </div>
     </body>

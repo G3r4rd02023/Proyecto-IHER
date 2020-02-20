@@ -526,10 +526,13 @@ a.text-warning:hover {
   color: #a47e3c;
 }
 .text-danger {
-  color: #b94a48;
+    color: #007bff;
+    font-weight:bold;
+    font-family:Calibri;
+    font-size:20px;
 }
 a.text-danger:hover {
-  color: #953b39;
+    color: dodgerblue;
 }
 .bg-primary {
   color: #fff;
@@ -5848,11 +5851,12 @@ button.close {
     background-size: cover;
     }
 .fondotransparenteblanco{
-    background-color: rgba(240, 238, 238, 0.50);
+    background-color: rgba(255, 255, 255, 0.80);
     max-width:600px;
     text-align:center;
     border-radius:2px;
     padding:30px, 30px, 20px;
+    align-content:center;
 }
 .LogoLogin {
     max-width:230px;
@@ -5861,4 +5865,13 @@ button.close {
 }
 .BotonEstirado{
     width:100%;
+}
+.ContenidoCentro {
+    max-width: 600px;
+    margin: 3vh auto;
+    text-align: center;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
