@@ -38,7 +38,7 @@ namespace ProyectoIHER
             var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(db));
 
-            var user = userManager.FindByName("glanza007@gmail.com");
+            var user = userManager.FindByName("admin@iher.hn");
 
             if (!userManager.IsInRole(user.Id, "Ver"))
             {
@@ -66,15 +66,15 @@ namespace ProyectoIHER
         {
             var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
 
-            var user = userManager.FindByName("glanza007@gmail.com");
+            var user = userManager.FindByName("admin@iher.hn");
             if (user == null)
             {
                 user = new ApplicationUser
                 {
-                    UserName = "glanza007@gmail.com",
-                    Email = "glanza007@gmail.com"
+                    UserName = "admin@iher.hn",
+                    Email = "admin@iher.hn"
                 };
-                userManager.Create(user, "Gerardo.0708");
+                userManager.Create(user, "KaThonic2793!");
             }
         }
 
