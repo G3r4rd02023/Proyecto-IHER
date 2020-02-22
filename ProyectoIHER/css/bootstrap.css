@@ -5853,16 +5853,19 @@ button.close {
     }
 .fondotransparenteblanco{
     background-color: rgba(255, 255, 255, 0.80);
-    max-width:600px;
+    max-width:400px;
+    min-width:200px;
+    width:500px;
     text-align:center;
-    border-radius:2px;
+    border-radius:10px;
     padding:30px, 30px, 20px;
     align-content:center;
  
 }
 .LogoLogin {
-    max-width:230px;
-    margin: 3vh  auto;
+    width:170px;
+   
+    margin: auto;
     text-align:center;
 }
 .BotonEstirado{
