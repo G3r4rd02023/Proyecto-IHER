@@ -5880,3 +5880,9 @@ button.close {
     padding-left: 15px;
     padding-right: 15px;
 }
+.imagenbloqueo {
+    background: no-repeat center fixed;
+    background-size: cover;
+    min-width:200px;
+    max-width:512px;
+}
