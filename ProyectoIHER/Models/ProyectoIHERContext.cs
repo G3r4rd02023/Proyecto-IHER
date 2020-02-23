@@ -22,5 +22,7 @@ namespace ProyectoIHER.Models
         public System.Data.Entity.DbSet<ProyectoIHER.Models.Cliente> Clientes { get; set; }
 
         public System.Data.Entity.DbSet<ProyectoIHER.Models.Nacionalidad> Nacionalidads { get; set; }
+        public System.Data.Entity.DbSet<ProyectoIHER.Models.Proveedores> Proveedores { get; set; }
+
     }
 }
