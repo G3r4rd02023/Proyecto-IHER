@@ -13,10 +13,10 @@
                 <img class="LogoLogin" src="~/Imagenes/logo.png" />
                 <p></p>
             </div>
-            <div class="row fondotransparenteblanco ContenidoCentro">
+            <div class="row fondotransparenteblanco ContenidoCentro modal-content">
                 <p></p>
                 <h4>Registrarse</h4>
-                
+
                 @Html.ValidationSummary("", new { @class = "text-danger" })
                 <div class="form-group">
 
@@ -26,14 +26,14 @@
                     </div>
                 </div>
                 <div class="form-group">
-                  
+
                     <div class="ContenidoCentro">
                         <input placeholder="Contraseña"
                                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
                     </div>
                 </div>
                 <div class="form-group">
-                   
+
                     <div class="ContenidoCentro">
                         <input placeholder="Confirmar Contraseña"
                                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
@@ -41,14 +41,15 @@
                 </div>
                 <div class="form-group">
                     <div class="ContenidoCentro">
-                        <input type="submit" class="btn btn-primary BotonEstirado" value="Registrarse" />
-                    </div>
+                        <input type="submit" class="btn btn-primary BotonEstirado" value="Registrarse"/>
+                        
+                                </div>
                 </div>
 
+                
 
 
-
-                </div>
+            </div>
                 }
             
         </body>
