@@ -218,6 +218,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Imagenes\EdificioIHER.jpg" />
+    <Content Include="Imagenes\logo Sol.png" />
     <Content Include="Imagenes\logo.png" />
     <Content Include="Imagenes\logo3.png" />
     <Content Include="Imagenes\Security.png" />
