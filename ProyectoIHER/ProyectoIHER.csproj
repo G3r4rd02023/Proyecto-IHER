@@ -220,6 +220,7 @@
     <Content Include="Imagenes\EdificioIHER.jpg" />
     <Content Include="Imagenes\logo.png" />
     <Content Include="Imagenes\logo3.png" />
+    <Content Include="Imagenes\Security.png" />
     <Content Include="Imagenes\Usuario Bloqueado.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
