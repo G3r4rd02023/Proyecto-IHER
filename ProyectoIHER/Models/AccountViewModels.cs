@@ -64,6 +64,16 @@ namespace ProyectoIHER.Models
 
     public class RegisterViewModel
     {
+        [Required]  
+        [StringLength(100)]
+        [Display(Name = "Nombre Completo")]
+        public string FullName { get; set; }
+
+        [Required]
+        [DataType(DataType.MultilineText)]
+        [Display(Name = "Direccion")]
+        public string Address { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Correo electrónico")]

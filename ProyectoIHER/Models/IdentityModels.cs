@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -17,7 +19,13 @@ namespace ProyectoIHER.Models
             // Agregar aquí notificaciones personalizadas de usuario
             return userIdentity;
         }
+
+        [StringLength(100)]
+        [Display(Name = "Nombre")]
         public string FullName { get; set; }
+
+        [Display(Name = "Direccion")]
+        public string Address { get; set; }
 
         public virtual List<PreguntasUsuario> PreguntasUsuario { get; set; }
     }
