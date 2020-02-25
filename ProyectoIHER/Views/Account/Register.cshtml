@@ -21,35 +21,35 @@
                 <div class="form-group">
 
                     <div class="ContenidoCentro">
-                        <input placeholder="NombreCompleto"
+                        <input placeholder="Nombre Completo" title="Nombre Completo"
                                @Html.TextBoxFor(m => m.FullName, new { @class = "form-control" })
                     </div>
                 </div>
                 <div class="form-group">
 
                     <div class="ContenidoCentro">
-                        <input placeholder="Direccion"
+                        <input placeholder="Direccion" title="Dirección de residencia"
                                @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
                     </div>
                 </div>
                 <div class="form-group">
 
                     <div class="ContenidoCentro">
-                        <input placeholder="Correo"
+                        <input placeholder="Correo" title="Ingrese un correo valido usuario@dominio.com"
                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
                     </div>
                 </div>
                 <div class="form-group">
 
                     <div class="ContenidoCentro">
-                        <input placeholder="Contraseña"
+                        <input placeholder="Contraseña" title="La contraseña debe tener una letra mayúscula, una minúscula, un caracter especial, un número y que sea mayor a 6 caracteres"
                                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
                     </div>
                 </div>
                 <div class="form-group">
 
                     <div class="ContenidoCentro">
-                        <input placeholder="Confirmar Contraseña"
+                        <input placeholder="Confirmar Contraseña" title="Confirmar la contraseña"
                                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
                     </div>
                 </div>
