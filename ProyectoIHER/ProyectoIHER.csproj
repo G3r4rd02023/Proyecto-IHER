@@ -185,10 +185,24 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NacionalidadesController.cs" />
+    <Compile Include="Controllers\PreguntasController.cs" />
+    <Compile Include="Controllers\PreguntasUsuariosController.cs" />
     <Compile Include="Controllers\ProveedoresController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002251634292_TablaUsuario.cs" />
+    <Compile Include="Migrations\202002251634292_TablaUsuario.Designer.cs">
+      <DependentUpon>202002251634292_TablaUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002251647193_Address.cs" />
+    <Compile Include="Migrations\202002251647193_Address.Designer.cs">
+      <DependentUpon>202002251647193_Address.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002251652266_Fullname.cs" />
+    <Compile Include="Migrations\202002251652266_Fullname.Designer.cs">
+      <DependentUpon>202002251652266_Fullname.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -196,6 +210,8 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Nacionalidad.cs" />
+    <Compile Include="Models\Preguntas.cs" />
+    <Compile Include="Models\PreguntasUsuario.cs" />
     <Compile Include="Models\Proveedores.cs" />
     <Compile Include="Models\ProyectoIHERContext.cs" />
     <Compile Include="ModelViews\RoleView.cs" />
@@ -289,6 +305,16 @@
     <Content Include="Views\Proveedores\Details.cshtml" />
     <Content Include="Views\Proveedores\Edit.cshtml" />
     <Content Include="Views\Proveedores\Index.cshtml" />
+    <Content Include="Views\Preguntas\Create.cshtml" />
+    <Content Include="Views\Preguntas\Delete.cshtml" />
+    <Content Include="Views\Preguntas\Details.cshtml" />
+    <Content Include="Views\Preguntas\Edit.cshtml" />
+    <Content Include="Views\Preguntas\Index.cshtml" />
+    <Content Include="Views\PreguntasUsuarios\Create.cshtml" />
+    <Content Include="Views\PreguntasUsuarios\Delete.cshtml" />
+    <Content Include="Views\PreguntasUsuarios\Details.cshtml" />
+    <Content Include="Views\PreguntasUsuarios\Edit.cshtml" />
+    <Content Include="Views\PreguntasUsuarios\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -305,6 +331,17 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202002251634292_TablaUsuario.resx">
+      <DependentUpon>202002251634292_TablaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002251647193_Address.resx">
+      <DependentUpon>202002251647193_Address.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002251652266_Fullname.resx">
+      <DependentUpon>202002251652266_Fullname.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

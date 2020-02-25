@@ -21,34 +21,46 @@
                 <div class="form-group">
 
                     <div class="ContenidoCentro">
-                        <input placeholder="Correo" title="Ingrese un correo valido: usuario@dominio.com"
-                        
-                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                        
+                        <input placeholder="NombreCompleto"
+                               @Html.TextBoxFor(m => m.FullName, new { @class = "form-control" })
                     </div>
                 </div>
                 <div class="form-group">
 
                     <div class="ContenidoCentro">
-                        <input placeholder="Contraseña" title="Las contraseñas deben tener al menos 6 caracteres, un carácter especial, una letra Mayúscula, minúscula y un número"
+                        <input placeholder="Direccion"
+                               @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <div class="ContenidoCentro">
+                        <input placeholder="Correo"
+                               @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <div class="ContenidoCentro">
+                        <input placeholder="Contraseña"
                                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
                     </div>
                 </div>
                 <div class="form-group">
 
                     <div class="ContenidoCentro">
-                        <input placeholder="Confirmar Contraseña" title="Confirmar Contraseña"
+                        <input placeholder="Confirmar Contraseña"
                                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="ContenidoCentro">
-                        <input type="submit" class="btn btn-primary BotonEstirado" value="Registrarse"/>
-                        
-                                </div>
+                        <input type="submit" class="btn btn-primary BotonEstirado" value="Registrarse" />
+
+                    </div>
                 </div>
 
-                
+
 
 
             </div>

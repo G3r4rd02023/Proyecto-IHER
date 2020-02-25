@@ -1,4 +1,7 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -16,6 +19,15 @@ namespace ProyectoIHER.Models
             // Agregar aquí notificaciones personalizadas de usuario
             return userIdentity;
         }
+
+        [StringLength(100)]
+        [Display(Name = "Nombre")]
+        public string FullName { get; set; }
+
+        [Display(Name = "Direccion")]
+        public string Address { get; set; }
+
+        public virtual List<PreguntasUsuario> PreguntasUsuario { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -29,5 +41,9 @@ namespace ProyectoIHER.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<ProyectoIHER.Models.Preguntas> Preguntas { get; set; }
+
+        public System.Data.Entity.DbSet<ProyectoIHER.Models.PreguntasUsuario> PreguntasUsuarios { get; set; }
     }
 }
