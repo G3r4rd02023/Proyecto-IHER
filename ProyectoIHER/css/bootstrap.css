@@ -5849,6 +5849,7 @@ button.close {
 .FondoEdificio {
     background: url(../Imagenes/EdificioIHER.jpg) no-repeat center fixed;
     background-size: cover;
+    
     }
 .fondotransparenteblanco{
    
@@ -5883,4 +5884,7 @@ button.close {
     background-size: cover;
     min-width:200px;
     max-width:512px;
+}
+.desenfoque{
+    filter:blur(6px);
 }
