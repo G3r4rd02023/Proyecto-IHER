@@ -185,6 +185,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NacionalidadesController.cs" />
+    <Compile Include="Controllers\PreguntasController.cs" />
+    <Compile Include="Controllers\PreguntasUsuariosController.cs" />
     <Compile Include="Controllers\ProveedoresController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -196,6 +198,8 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Nacionalidad.cs" />
+    <Compile Include="Models\Preguntas.cs" />
+    <Compile Include="Models\PreguntasUsuario.cs" />
     <Compile Include="Models\Proveedores.cs" />
     <Compile Include="Models\ProyectoIHERContext.cs" />
     <Compile Include="ModelViews\RoleView.cs" />
@@ -289,6 +293,16 @@
     <Content Include="Views\Proveedores\Details.cshtml" />
     <Content Include="Views\Proveedores\Edit.cshtml" />
     <Content Include="Views\Proveedores\Index.cshtml" />
+    <Content Include="Views\Preguntas\Create.cshtml" />
+    <Content Include="Views\Preguntas\Delete.cshtml" />
+    <Content Include="Views\Preguntas\Details.cshtml" />
+    <Content Include="Views\Preguntas\Edit.cshtml" />
+    <Content Include="Views\Preguntas\Index.cshtml" />
+    <Content Include="Views\PreguntasUsuarios\Create.cshtml" />
+    <Content Include="Views\PreguntasUsuarios\Delete.cshtml" />
+    <Content Include="Views\PreguntasUsuarios\Details.cshtml" />
+    <Content Include="Views\PreguntasUsuarios\Edit.cshtml" />
+    <Content Include="Views\PreguntasUsuarios\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
