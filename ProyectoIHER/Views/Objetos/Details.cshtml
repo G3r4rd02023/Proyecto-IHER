@@ -1,0 +1,42 @@
+﻿@model ProyectoIHER.Models.Objeto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Objeto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ObejtoName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ObejtoName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoObjeto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoObjeto)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ObjetoID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

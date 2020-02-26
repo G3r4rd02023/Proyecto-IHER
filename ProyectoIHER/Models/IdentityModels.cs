@@ -28,6 +28,8 @@ namespace ProyectoIHER.Models
         public string Address { get; set; }
 
         public virtual List<PreguntasUsuario> PreguntasUsuario { get; set; }
+        public virtual List<Bitacora> Bitacoras { get; set; }
+        public virtual List<Parametro> Parametros { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -45,5 +47,11 @@ namespace ProyectoIHER.Models
         public System.Data.Entity.DbSet<ProyectoIHER.Models.Preguntas> Preguntas { get; set; }
 
         public System.Data.Entity.DbSet<ProyectoIHER.Models.PreguntasUsuario> PreguntasUsuarios { get; set; }
+
+        public System.Data.Entity.DbSet<ProyectoIHER.Models.Bitacora> Bitacoras { get; set; }
+
+        public System.Data.Entity.DbSet<ProyectoIHER.Models.Objeto> Objetoes { get; set; }
+
+        public System.Data.Entity.DbSet<ProyectoIHER.Models.Parametro> Parametroes { get; set; }
     }
 }

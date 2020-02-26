@@ -181,10 +181,13 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BitacorasController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NacionalidadesController.cs" />
+    <Compile Include="Controllers\ObjetosController.cs" />
+    <Compile Include="Controllers\ParametrosController.cs" />
     <Compile Include="Controllers\PreguntasController.cs" />
     <Compile Include="Controllers\PreguntasUsuariosController.cs" />
     <Compile Include="Controllers\ProveedoresController.cs" />
@@ -204,12 +207,19 @@
     <Compile Include="Migrations\202002251652266_Fullname.Designer.cs">
       <DependentUpon>202002251652266_Fullname.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002251918403_Seguridad.cs" />
+    <Compile Include="Migrations\202002251918403_Seguridad.Designer.cs">
+      <DependentUpon>202002251918403_Seguridad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Bitacora.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Nacionalidad.cs" />
+    <Compile Include="Models\Objeto.cs" />
+    <Compile Include="Models\Parametro.cs" />
     <Compile Include="Models\Preguntas.cs" />
     <Compile Include="Models\PreguntasUsuario.cs" />
     <Compile Include="Models\Proveedores.cs" />
@@ -315,6 +325,21 @@
     <Content Include="Views\PreguntasUsuarios\Details.cshtml" />
     <Content Include="Views\PreguntasUsuarios\Edit.cshtml" />
     <Content Include="Views\PreguntasUsuarios\Index.cshtml" />
+    <Content Include="Views\Objetos\Create.cshtml" />
+    <Content Include="Views\Objetos\Delete.cshtml" />
+    <Content Include="Views\Objetos\Details.cshtml" />
+    <Content Include="Views\Objetos\Edit.cshtml" />
+    <Content Include="Views\Objetos\Index.cshtml" />
+    <Content Include="Views\Bitacoras\Create.cshtml" />
+    <Content Include="Views\Bitacoras\Delete.cshtml" />
+    <Content Include="Views\Bitacoras\Details.cshtml" />
+    <Content Include="Views\Bitacoras\Edit.cshtml" />
+    <Content Include="Views\Bitacoras\Index.cshtml" />
+    <Content Include="Views\Parametros\Create.cshtml" />
+    <Content Include="Views\Parametros\Delete.cshtml" />
+    <Content Include="Views\Parametros\Details.cshtml" />
+    <Content Include="Views\Parametros\Edit.cshtml" />
+    <Content Include="Views\Parametros\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -341,6 +366,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002251652266_Fullname.resx">
       <DependentUpon>202002251652266_Fullname.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002251918403_Seguridad.resx">
+      <DependentUpon>202002251918403_Seguridad.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

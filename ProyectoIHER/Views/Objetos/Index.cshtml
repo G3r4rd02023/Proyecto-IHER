@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ProyectoIHER.Models.Objeto>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ObejtoName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoObjeto)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ObejtoName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoObjeto)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ObjetoID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ObjetoID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ObjetoID })
+        </td>
+    </tr>
+}
+
+</table>
