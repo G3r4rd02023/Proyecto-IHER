@@ -10,9 +10,7 @@ namespace ProyectoIHER.Models
     {
         [Key]
         public int IdProveedor { get; set; }
-
         public string NombreProveedor { get; set; }
-
         [Display (Name = "Direcion")]
         [Required]
         public string Direccion { get; set; }

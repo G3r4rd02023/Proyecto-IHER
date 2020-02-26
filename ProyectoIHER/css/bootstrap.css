@@ -526,11 +526,18 @@ a.text-warning:hover {
   color: #a47e3c;
 }
 .text-danger {
-    color: #007bff;
+    background:#B94A48;
+    color:#ffffff;
+       border-radius:5px;
+       margin:0px 0px 4px;
+       font-size:12px;
+
     
 }
 a.text-danger:hover {
-    color: dodgerblue;
+    background: #B94A48;
+    color: #ffffff;
+    border-radius: 5px;
 }
 .bg-primary {
   color: #fff;
@@ -5849,6 +5856,7 @@ button.close {
 .FondoEdificio {
     background: url(../Imagenes/EdificioIHER.jpg) no-repeat center fixed;
     background-size: cover;
+    
     }
 .fondotransparenteblanco{
    
@@ -5884,3 +5892,9 @@ button.close {
     min-width:200px;
     max-width:512px;
 }
+
+
+.TextoLink {color: dodgerblue;}
+.TextoLink:active {color: dodgerblue}
+.TextoLink:link {color: dodgerblue}
+.TextoLink:visited {color: dodgerblue}

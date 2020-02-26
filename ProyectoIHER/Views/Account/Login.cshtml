@@ -26,7 +26,7 @@
                 <div class="form-group">
                  
                     <div class="ContenidoCentro">
-                        <input placeholder="Correo"
+                        <input placeholder="Correo" title="Ingrese un correo valido usuario@dominio.com"
                         @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                                
@@ -35,7 +35,7 @@
                 <div class="form-group">
                
                     <div class="ContenidoCentro">
-                        <input placeholder="Contraseña"
+                        <input placeholder="Contraseña" title="Ingrese su contraseña"
                         @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                     </div>
@@ -46,12 +46,12 @@
                         <input type="submit" value="Iniciar sesión" class="btn btn-primary BotonEstirado" />
                     </div>
                 </div>
-                <p class="text-danger">
-                    @Html.ActionLink("Registrar como nuevo usuario", "Register")
+                <p>
+                   @Html.ActionLink("Registrarse", "Register", null, new {@class="TextoLink" })
                 </p>
                 //Habilite esta opción después de habilitar la confirmación de la cuenta para la función de restablecimiento de contraseña
-                <p class="text-danger">
-                    @Html.ActionLink("¿Ha olvidado su contraseña?", "ForgotPassword")
+                <p>
+                    @Html.ActionLink("¿Olvidó su contraseña?", "ForgotPassword", null, new {@class="TextoLink" })
                 </p>
             }
         </section>
