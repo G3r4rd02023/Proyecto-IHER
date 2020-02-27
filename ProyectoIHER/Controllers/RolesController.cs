@@ -10,109 +10,107 @@ using ProyectoIHER.Models;
 
 namespace ProyectoIHER.Controllers
 {
-    public class PreguntasController : Controller
+    public class RolesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Preguntas
+        // GET: Roles
         public ActionResult Index()
         {
-            
-            return View(db.Preguntas.ToList());
+            return View(db.Rols.ToList());
         }
 
-        // GET: Preguntas/Details/5
+        // GET: Roles/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Preguntas preguntas = db.Preguntas.Find(id);
-            if (preguntas == null)
+            Rol rol = db.Rols.Find(id);
+            if (rol == null)
             {
                 return HttpNotFound();
             }
-            return View(preguntas);
+            return View(rol);
         }
 
-        // GET: Preguntas/Create
+        // GET: Roles/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Preguntas/Create
+        // POST: Roles/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PreguntaID,NombrePregunta")] Preguntas preguntas)
+        public ActionResult Create([Bind(Include = "RolID,RolName")] Rol rol)
         {
             if (ModelState.IsValid)
             {
-               
-                db.Preguntas.Add(preguntas);
+                db.Rols.Add(rol);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(preguntas);
+            return View(rol);
         }
 
-        // GET: Preguntas/Edit/5
+        // GET: Roles/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Preguntas preguntas = db.Preguntas.Find(id);
-            if (preguntas == null)
+            Rol rol = db.Rols.Find(id);
+            if (rol == null)
             {
                 return HttpNotFound();
             }
-            return View(preguntas);
+            return View(rol);
         }
 
-        // POST: Preguntas/Edit/5
+        // POST: Roles/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PreguntaID,NombrePregunta")] Preguntas preguntas)
+        public ActionResult Edit([Bind(Include = "RolID,RolName")] Rol rol)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(preguntas).State = EntityState.Modified;
+                db.Entry(rol).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(preguntas);
+            return View(rol);
         }
 
-        // GET: Preguntas/Delete/5
+        // GET: Roles/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Preguntas preguntas = db.Preguntas.Find(id);
-            if (preguntas == null)
+            Rol rol = db.Rols.Find(id);
+            if (rol == null)
             {
                 return HttpNotFound();
             }
-            return View(preguntas);
+            return View(rol);
         }
 
-        // POST: Preguntas/Delete/5
+        // POST: Roles/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Preguntas preguntas = db.Preguntas.Find(id);
-            db.Preguntas.Remove(preguntas);
+            Rol rol = db.Rols.Find(id);
+            db.Rols.Remove(rol);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

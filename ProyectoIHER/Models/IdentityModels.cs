@@ -53,5 +53,11 @@ namespace ProyectoIHER.Models
         public System.Data.Entity.DbSet<ProyectoIHER.Models.Objeto> Objetoes { get; set; }
 
         public System.Data.Entity.DbSet<ProyectoIHER.Models.Parametro> Parametroes { get; set; }
+
+        public System.Data.Entity.DbSet<ProyectoIHER.Models.Estado> Estadoes { get; set; }
+
+        public System.Data.Entity.DbSet<ProyectoIHER.Models.Rol> Rols { get; set; }
+
+        public System.Data.Entity.DbSet<ProyectoIHER.Models.GestionUsuarios> GestionUsuarios { get; set; }
     }
 }

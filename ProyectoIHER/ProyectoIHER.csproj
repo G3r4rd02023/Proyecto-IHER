@@ -183,6 +183,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BitacorasController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
+    <Compile Include="Controllers\EstadosController.cs" />
+    <Compile Include="Controllers\GestionUsuariosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NacionalidadesController.cs" />
@@ -191,6 +193,7 @@
     <Compile Include="Controllers\PreguntasController.cs" />
     <Compile Include="Controllers\PreguntasUsuariosController.cs" />
     <Compile Include="Controllers\ProveedoresController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -215,6 +218,8 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Bitacora.cs" />
     <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\Estado.cs" />
+    <Compile Include="Models\GestionUsuarios.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Nacionalidad.cs" />
@@ -224,6 +229,7 @@
     <Compile Include="Models\PreguntasUsuario.cs" />
     <Compile Include="Models\Proveedores.cs" />
     <Compile Include="Models\ProyectoIHERContext.cs" />
+    <Compile Include="Models\Rol.cs" />
     <Compile Include="ModelViews\RoleView.cs" />
     <Compile Include="ModelViews\UserView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -340,6 +346,21 @@
     <Content Include="Views\Parametros\Details.cshtml" />
     <Content Include="Views\Parametros\Edit.cshtml" />
     <Content Include="Views\Parametros\Index.cshtml" />
+    <Content Include="Views\Estados\Create.cshtml" />
+    <Content Include="Views\Estados\Delete.cshtml" />
+    <Content Include="Views\Estados\Details.cshtml" />
+    <Content Include="Views\Estados\Edit.cshtml" />
+    <Content Include="Views\Estados\Index.cshtml" />
+    <Content Include="Views\Roles\Create.cshtml" />
+    <Content Include="Views\Roles\Delete.cshtml" />
+    <Content Include="Views\Roles\Details.cshtml" />
+    <Content Include="Views\Roles\Edit.cshtml" />
+    <Content Include="Views\Roles\Index.cshtml" />
+    <Content Include="Views\GestionUsuarios\Create.cshtml" />
+    <Content Include="Views\GestionUsuarios\Delete.cshtml" />
+    <Content Include="Views\GestionUsuarios\Details.cshtml" />
+    <Content Include="Views\GestionUsuarios\Edit.cshtml" />
+    <Content Include="Views\GestionUsuarios\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

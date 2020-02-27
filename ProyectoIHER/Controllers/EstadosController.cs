@@ -10,109 +10,107 @@ using ProyectoIHER.Models;
 
 namespace ProyectoIHER.Controllers
 {
-    public class PreguntasController : Controller
+    public class EstadosController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Preguntas
+        // GET: Estados
         public ActionResult Index()
         {
-            
-            return View(db.Preguntas.ToList());
+            return View(db.Estadoes.ToList());
         }
 
-        // GET: Preguntas/Details/5
+        // GET: Estados/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Preguntas preguntas = db.Preguntas.Find(id);
-            if (preguntas == null)
+            Estado estado = db.Estadoes.Find(id);
+            if (estado == null)
             {
                 return HttpNotFound();
             }
-            return View(preguntas);
+            return View(estado);
         }
 
-        // GET: Preguntas/Create
+        // GET: Estados/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Preguntas/Create
+        // POST: Estados/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PreguntaID,NombrePregunta")] Preguntas preguntas)
+        public ActionResult Create([Bind(Include = "EstadoID,EstadoName")] Estado estado)
         {
             if (ModelState.IsValid)
             {
-               
-                db.Preguntas.Add(preguntas);
+                db.Estadoes.Add(estado);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(preguntas);
+            return View(estado);
         }
 
-        // GET: Preguntas/Edit/5
+        // GET: Estados/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Preguntas preguntas = db.Preguntas.Find(id);
-            if (preguntas == null)
+            Estado estado = db.Estadoes.Find(id);
+            if (estado == null)
             {
                 return HttpNotFound();
             }
-            return View(preguntas);
+            return View(estado);
         }
 
-        // POST: Preguntas/Edit/5
+        // POST: Estados/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PreguntaID,NombrePregunta")] Preguntas preguntas)
+        public ActionResult Edit([Bind(Include = "EstadoID,EstadoName")] Estado estado)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(preguntas).State = EntityState.Modified;
+                db.Entry(estado).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(preguntas);
+            return View(estado);
         }
 
-        // GET: Preguntas/Delete/5
+        // GET: Estados/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Preguntas preguntas = db.Preguntas.Find(id);
-            if (preguntas == null)
+            Estado estado = db.Estadoes.Find(id);
+            if (estado == null)
             {
                 return HttpNotFound();
             }
-            return View(preguntas);
+            return View(estado);
         }
 
-        // POST: Preguntas/Delete/5
+        // POST: Estados/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Preguntas preguntas = db.Preguntas.Find(id);
-            db.Preguntas.Remove(preguntas);
+            Estado estado = db.Estadoes.Find(id);
+            db.Estadoes.Remove(estado);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using ProyectoIHER.Models;
 
 namespace ProyectoIHER.Controllers
@@ -50,6 +51,10 @@ namespace ProyectoIHER.Controllers
         {
             if (ModelState.IsValid)
             {
+               
+                parametro.AspNetUserID = User.Identity.GetUserName();
+                parametro.FechaCreacion = DateTime.Now;
+                parametro.FechaModificacion = DateTime.Now;
                 db.Parametroes.Add(parametro);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -82,6 +87,9 @@ namespace ProyectoIHER.Controllers
         {
             if (ModelState.IsValid)
             {
+                parametro.AspNetUserID = User.Identity.GetUserName();
+                parametro.FechaCreacion = DateTime.Now;
+                parametro.FechaModificacion = DateTime.Now;
                 db.Entry(parametro).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

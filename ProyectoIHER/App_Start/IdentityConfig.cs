@@ -84,6 +84,7 @@ namespace ProyectoIHER
             // Configurar valores predeterminados para bloqueo de usuario
             manager.UserLockoutEnabledByDefault = true;
             manager.DefaultAccountLockoutTimeSpan = TimeSpan.FromMinutes(60);
+            //var parametro = new Parametro();
             manager.MaxFailedAccessAttemptsBeforeLockout = 3;
 
             // Registre proveedores de autenticación en dos fases. Esta aplicación usa los pasos Teléfono y Correo electrónico para recibir un código para comprobar el usuario

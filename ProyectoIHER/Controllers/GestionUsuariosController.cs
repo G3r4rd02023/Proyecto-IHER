@@ -10,109 +10,116 @@ using ProyectoIHER.Models;
 
 namespace ProyectoIHER.Controllers
 {
-    public class PreguntasController : Controller
+    public class GestionUsuariosController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Preguntas
+        // GET: GestionUsuarios
         public ActionResult Index()
         {
-            
-            return View(db.Preguntas.ToList());
+            var gestionUsuarios = db.GestionUsuarios.Include(g => g.Estado);
+            return View(gestionUsuarios.ToList());
         }
 
-        // GET: Preguntas/Details/5
+        // GET: GestionUsuarios/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Preguntas preguntas = db.Preguntas.Find(id);
-            if (preguntas == null)
+            GestionUsuarios gestionUsuarios = db.GestionUsuarios.Find(id);
+            if (gestionUsuarios == null)
             {
                 return HttpNotFound();
             }
-            return View(preguntas);
+            return View(gestionUsuarios);
         }
 
-        // GET: Preguntas/Create
+        // GET: GestionUsuarios/Create
         public ActionResult Create()
         {
+            ViewBag.EstadoID = new SelectList(db.Estadoes, "EstadoID", "EstadoName");
             return View();
         }
 
-        // POST: Preguntas/Create
+        // POST: GestionUsuarios/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PreguntaID,NombrePregunta")] Preguntas preguntas)
+        public ActionResult Create([Bind(Include = "GestionUsuarioID,NombreUsuario,UserName,Telefono,Direccion,RolID,Email,Password,FechaCreacion,FechaVencimiento,EstadoID")] GestionUsuarios gestionUsuarios)
         {
             if (ModelState.IsValid)
             {
-               
-                db.Preguntas.Add(preguntas);
+                gestionUsuarios.FechaCreacion = DateTime.Now;
+                gestionUsuarios.FechaVencimiento = DateTime.Now.AddMonths(3);
+                db.GestionUsuarios.Add(gestionUsuarios);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(preguntas);
+            ViewBag.EstadoID = new SelectList(db.Estadoes, "EstadoID", "EstadoName", gestionUsuarios.EstadoID);
+            return View(gestionUsuarios);
         }
 
-        // GET: Preguntas/Edit/5
+        // GET: GestionUsuarios/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Preguntas preguntas = db.Preguntas.Find(id);
-            if (preguntas == null)
+            GestionUsuarios gestionUsuarios = db.GestionUsuarios.Find(id);
+            if (gestionUsuarios == null)
             {
                 return HttpNotFound();
             }
-            return View(preguntas);
+            ViewBag.EstadoID = new SelectList(db.Estadoes, "EstadoID", "EstadoName", gestionUsuarios.EstadoID);
+            return View(gestionUsuarios);
         }
 
-        // POST: Preguntas/Edit/5
+        // POST: GestionUsuarios/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PreguntaID,NombrePregunta")] Preguntas preguntas)
+        public ActionResult Edit([Bind(Include = "GestionUsuarioID,NombreUsuario,UserName,Telefono,Direccion,RolID,Email,Password,FechaCreacion,FechaVencimiento,EstadoID")] GestionUsuarios gestionUsuarios)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(preguntas).State = EntityState.Modified;
+                gestionUsuarios.FechaCreacion = DateTime.Now;
+                gestionUsuarios.FechaVencimiento = DateTime.Now.AddMonths(3);
+                db.Entry(gestionUsuarios).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(preguntas);
+            ViewBag.EstadoID = new SelectList(db.Estadoes, "EstadoID", "EstadoName", gestionUsuarios.EstadoID);
+            return View(gestionUsuarios);
         }
 
-        // GET: Preguntas/Delete/5
+        // GET: GestionUsuarios/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Preguntas preguntas = db.Preguntas.Find(id);
-            if (preguntas == null)
+            GestionUsuarios gestionUsuarios = db.GestionUsuarios.Find(id);
+            if (gestionUsuarios == null)
             {
                 return HttpNotFound();
             }
-            return View(preguntas);
+            return View(gestionUsuarios);
         }
 
-        // POST: Preguntas/Delete/5
+        // POST: GestionUsuarios/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Preguntas preguntas = db.Preguntas.Find(id);
-            db.Preguntas.Remove(preguntas);
+            GestionUsuarios gestionUsuarios = db.GestionUsuarios.Find(id);
+            db.GestionUsuarios.Remove(gestionUsuarios);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
