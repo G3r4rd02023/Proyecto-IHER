@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using ProyectoIHER.Models;
 
 namespace ProyectoIHER.Controllers
@@ -46,10 +47,14 @@ namespace ProyectoIHER.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EstadoID,EstadoName")] Estado estado)
+        public ActionResult Create([Bind(Include = "EstadoID,EstadoName,CreadoPor,FechaCreacion,ModificadoPor,FechaModificacion")] Estado estado)
         {
             if (ModelState.IsValid)
             {
+                estado.CreadoPor = User.Identity.GetUserName();
+                estado.FechaCreacion = DateTime.Now;
+                estado.ModificadoPor = User.Identity.GetUserName();
+                estado.FechaModificacion = DateTime.Now;
                 db.Estadoes.Add(estado);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -78,10 +83,14 @@ namespace ProyectoIHER.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EstadoID,EstadoName")] Estado estado)
+        public ActionResult Edit([Bind(Include = "EstadoID,EstadoName,CreadoPor,FechaCreacion,ModificadoPor,FechaModificacion")] Estado estado)
         {
             if (ModelState.IsValid)
             {
+                estado.CreadoPor = User.Identity.GetUserName();
+                estado.FechaCreacion = DateTime.Now;
+                estado.ModificadoPor = User.Identity.GetUserName();
+                estado.FechaModificacion = DateTime.Now;
                 db.Entry(estado).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

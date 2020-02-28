@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using ProyectoIHER.Models;
 
 namespace ProyectoIHER.Controllers
@@ -48,13 +49,18 @@ namespace ProyectoIHER.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PreguntasUsuarioID,Respuesta,PreguntaID,AspNetUserID")] PreguntasUsuario preguntasUsuario)
+        public ActionResult Create([Bind(Include = "PreguntasUsuarioID,Respuesta,PreguntaID,AspNetUserID,CreadoPor,FechaCreacion,ModificadoPor,FechaModificacion")] PreguntasUsuario preguntasUsuario)
         {
             if (ModelState.IsValid)
             {
+                preguntasUsuario.AspNetUserID = User.Identity.GetUserName();
+                preguntasUsuario.CreadoPor = User.Identity.GetUserName();
+                preguntasUsuario.FechaCreacion = DateTime.Now;
+                preguntasUsuario.ModificadoPor = User.Identity.GetUserName();
+                preguntasUsuario.FechaModificacion = DateTime.Now;
                 db.PreguntasUsuarios.Add(preguntasUsuario);
                 db.SaveChanges();
-                return RedirectToAction("Index","Home");                
+                return RedirectToAction("Index");
             }
 
             ViewBag.PreguntaID = new SelectList(db.Preguntas, "PreguntaID", "NombrePregunta", preguntasUsuario.PreguntaID);
@@ -82,10 +88,15 @@ namespace ProyectoIHER.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PreguntasUsuarioID,Respuesta,PreguntaID,AspNetUserID")] PreguntasUsuario preguntasUsuario)
+        public ActionResult Edit([Bind(Include = "PreguntasUsuarioID,Respuesta,PreguntaID,AspNetUserID,CreadoPor,FechaCreacion,ModificadoPor,FechaModificacion")] PreguntasUsuario preguntasUsuario)
         {
             if (ModelState.IsValid)
             {
+                preguntasUsuario.AspNetUserID = User.Identity.GetUserName();
+                preguntasUsuario.CreadoPor = User.Identity.GetUserName();
+                preguntasUsuario.FechaCreacion = DateTime.Now;
+                preguntasUsuario.ModificadoPor = User.Identity.GetUserName();
+                preguntasUsuario.FechaModificacion = DateTime.Now;
                 db.Entry(preguntasUsuario).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

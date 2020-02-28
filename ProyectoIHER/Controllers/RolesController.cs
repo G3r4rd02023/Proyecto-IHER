@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using ProyectoIHER.Models;
 
 namespace ProyectoIHER.Controllers
@@ -46,10 +47,14 @@ namespace ProyectoIHER.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "RolID,RolName")] Rol rol)
+        public ActionResult Create([Bind(Include = "RolID,RolName,CreadoPor,FechaCreacion,ModificadoPor,FechaModificacion")] Rol rol)
         {
             if (ModelState.IsValid)
             {
+                rol.CreadoPor = User.Identity.GetUserName();
+                rol.FechaCreacion = DateTime.Now;
+                rol.ModificadoPor = User.Identity.GetUserName();
+                rol.FechaModificacion = DateTime.Now;
                 db.Rols.Add(rol);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -78,10 +83,14 @@ namespace ProyectoIHER.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "RolID,RolName")] Rol rol)
+        public ActionResult Edit([Bind(Include = "RolID,RolName,CreadoPor,FechaCreacion,ModificadoPor,FechaModificacion")] Rol rol)
         {
             if (ModelState.IsValid)
             {
+                rol.CreadoPor = User.Identity.GetUserName();
+                rol.FechaCreacion = DateTime.Now;
+                rol.ModificadoPor = User.Identity.GetUserName();
+                rol.FechaModificacion = DateTime.Now;
                 db.Entry(rol).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

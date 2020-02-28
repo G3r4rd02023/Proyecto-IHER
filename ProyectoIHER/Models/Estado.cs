@@ -14,6 +14,14 @@ namespace ProyectoIHER.Models
         [Display(Name = "Estado")]
         public string EstadoName { get; set; }
 
+        public string CreadoPor { get; set; }
+
+        public DateTime FechaCreacion { get; set; }
+
+        public string ModificadoPor { get; set; }
+
+        public DateTime FechaModificacion { get; set; }
+
         public virtual ICollection<GestionUsuarios> GestionUsuarios { get; set; }
     }
 }

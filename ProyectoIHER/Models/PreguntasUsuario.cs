@@ -21,6 +21,14 @@ namespace ProyectoIHER.Models
         [Display(Name = "Usuario")]
         public string AspNetUserID { get; set; }
 
+        public string CreadoPor { get; set; }
+
+        public DateTime FechaCreacion { get; set; }
+
+        public string ModificadoPor { get; set; }
+
+        public DateTime FechaModificacion { get; set; }
+
         public virtual Preguntas Preguntas { get; set; }
         public virtual ApplicationUser Usuario { get; set; }
     }

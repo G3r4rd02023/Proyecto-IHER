@@ -15,5 +15,14 @@ namespace ProyectoIHER.Models
         [Required(ErrorMessage = "You must enter {0}")]
         [StringLength(100, ErrorMessage = "The field {0} must be between {1} and {2} characters", MinimumLength = 3)]
         public string NombrePregunta { get; set; }
+
+        public string CreadoPor { get; set; }
+
+        public DateTime FechaCreacion { get; set; }
+
+        public string ModificadoPor { get; set; }
+
+        public DateTime FechaModificacion { get; set; }
+
     }
 }

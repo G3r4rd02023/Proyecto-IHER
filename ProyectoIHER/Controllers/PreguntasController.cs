@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using ProyectoIHER.Models;
 
 namespace ProyectoIHER.Controllers
@@ -17,7 +18,6 @@ namespace ProyectoIHER.Controllers
         // GET: Preguntas
         public ActionResult Index()
         {
-            
             return View(db.Preguntas.ToList());
         }
 
@@ -47,11 +47,14 @@ namespace ProyectoIHER.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PreguntaID,NombrePregunta")] Preguntas preguntas)
+        public ActionResult Create([Bind(Include = "PreguntaID,NombrePregunta,CreadoPor,FechaCreacion,ModificadoPor,FechaModificacion")] Preguntas preguntas)
         {
             if (ModelState.IsValid)
             {
-               
+                preguntas.CreadoPor = User.Identity.GetUserName();
+                preguntas.FechaCreacion = DateTime.Now;
+                preguntas.ModificadoPor = User.Identity.GetUserName();
+                preguntas.FechaModificacion = DateTime.Now;
                 db.Preguntas.Add(preguntas);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -80,10 +83,14 @@ namespace ProyectoIHER.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PreguntaID,NombrePregunta")] Preguntas preguntas)
+        public ActionResult Edit([Bind(Include = "PreguntaID,NombrePregunta,CreadoPor,FechaCreacion,ModificadoPor,FechaModificacion")] Preguntas preguntas)
         {
             if (ModelState.IsValid)
             {
+                preguntas.CreadoPor = User.Identity.GetUserName();
+                preguntas.FechaCreacion = DateTime.Now;
+                preguntas.ModificadoPor = User.Identity.GetUserName();
+                preguntas.FechaModificacion = DateTime.Now;
                 db.Entry(preguntas).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
