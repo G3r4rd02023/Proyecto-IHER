@@ -60,7 +60,7 @@ namespace ProyectoIHER.Controllers
                 preguntasUsuario.FechaModificacion = DateTime.Now;
                 db.PreguntasUsuarios.Add(preguntasUsuario);
                 db.SaveChanges();
-                return RedirectToAction("SetPassword","Manage");
+                return RedirectToAction("Create","GestionUsuarios");
             }
 
             ViewBag.PreguntaID = new SelectList(db.Preguntas, "PreguntaID", "NombrePregunta", preguntasUsuario.PreguntaID);

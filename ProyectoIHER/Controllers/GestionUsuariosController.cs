@@ -52,13 +52,14 @@ namespace ProyectoIHER.Controllers
         {
             if (ModelState.IsValid)
             {
+               
                 gestionUsuarios.FechaCreacion = DateTime.Now;
                 gestionUsuarios.FechaVencimiento = DateTime.Now.AddMonths(3);
                 db.GestionUsuarios.Add(gestionUsuarios);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("ChangePassword","Manage");
             }
-
+            
             ViewBag.EstadoID = new SelectList(db.Estadoes, "EstadoID", "EstadoName", gestionUsuarios.EstadoID);
             return View(gestionUsuarios);
         }
@@ -75,6 +76,7 @@ namespace ProyectoIHER.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.RolID = new SelectList(db.Rols, "RoID", "RolName", gestionUsuarios.RolID);
             ViewBag.EstadoID = new SelectList(db.Estadoes, "EstadoID", "EstadoName", gestionUsuarios.EstadoID);
             return View(gestionUsuarios);
         }
@@ -94,6 +96,10 @@ namespace ProyectoIHER.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            
+
+          
+            ViewBag.RolID = new SelectList(db.Rols, "RoID", "RolName", gestionUsuarios.RolID);
             ViewBag.EstadoID = new SelectList(db.Estadoes, "EstadoID", "EstadoName", gestionUsuarios.EstadoID);
             return View(gestionUsuarios);
         }
